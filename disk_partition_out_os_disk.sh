@@ -1,3 +1,5 @@
+# format all disk in OS out of the os disk 
+
 bootdisk=$(df -h | awk '{print $1}' | grep -E "/dev/(sd|nvme)" | sed 's/p[0-9]*//g' | sort -u)
 osdisk="${bootdisk#/dev/}"
 echo $osdisk
